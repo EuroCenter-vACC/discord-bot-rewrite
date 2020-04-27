@@ -132,3 +132,4 @@ dmypy.json
 /tokens
 token.txt
 config.ini
+.vscode/
