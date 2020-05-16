@@ -133,3 +133,4 @@ dmypy.json
 token.txt
 config.ini
 .vscode/
+db/
