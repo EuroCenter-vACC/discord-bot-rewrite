@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # CUSTOM
-/tokens
+tokens/
 token.txt
 config.ini
 .vscode/
