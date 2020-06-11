@@ -228,7 +228,7 @@ class backgroundTasks(commands.Cog):
                     if not row[1] == 0:
                         userDiscord = int(row[1])
                         if userDiscord == user.id:
-                            foundUser == True
+                            foundUser = True
                             userName = f"{row[2]} {row[3]}"
                             eurw_rank = int(row[10])
                             euri_rank = int(row[12])
@@ -428,7 +428,7 @@ class backgroundTasks(commands.Cog):
                                     await user.remove_roles(roleSectorbuddy)
                                     print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role SB in user {userName} erroneous. Removed.")
                 
-                if not foundUser:
+                if foundUser == False:
                     if roleController in user.roles:
                         await user.remove_roles(roleController)
                         print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role Controller in user {userName} erroneous. Removed.")
