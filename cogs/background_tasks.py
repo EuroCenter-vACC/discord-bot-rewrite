@@ -223,10 +223,12 @@ class backgroundTasks(commands.Cog):
             c.execute("SELECT * FROM users")
             result = c.fetchall()
             for user in users:
+                foundUser = False
                 for row in result:
                     if not row[1] == 0:
                         userDiscord = int(row[1])
                         if userDiscord == user.id:
+                            foundUser == True
                             userName = f"{row[2]} {row[3]}"
                             eurw_rank = int(row[10])
                             euri_rank = int(row[12])
@@ -425,6 +427,58 @@ class backgroundTasks(commands.Cog):
                                 if roleSectorbuddy in user.roles:
                                     await user.remove_roles(roleSectorbuddy)
                                     print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role SB in user {userName} erroneous. Removed.")
+                
+                if not foundUser:
+                    if roleController in user.roles:
+                        await user.remove_roles(roleController)
+                        print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role Controller in user {userName} erroneous. Removed.")
+                    
+                    if roleSectorbuddy in user.roles:
+                        await user.remove_roles(roleSectorbuddy)
+                        print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role Scetor Buddy in user {userName} erroneous. Removed.")
+
+                    if roleEure in user.roles:
+                        await user.remove_roles(roleEure)
+                        print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role EURE in user {userName} erroneous. Removed.")
+                    if roleEureSB in user.roles:
+                        await user.remove_roles(roleEureSB)
+                        print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role EURE SB in user {userName} erroneous. Removed.")
+                    
+                    if roleEuri in user.roles:
+                        await user.remove_roles(roleEuri)
+                        print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role EURI in user {userName} erroneous. Removed.")
+                    if roleEuriSB in user.roles:
+                        await user.remove_roles(roleEuriSB)
+                        print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role EURI SB in user {userName} erroneous. Removed.")
+                    
+                    if roleEurm in user.roles:
+                        await user.remove_roles(roleEurm)
+                        print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role EURM in user {userName} erroneous. Removed.")
+                    if roleEurmSB in user.roles:
+                        await user.remove_roles(roleEurmSB)
+                        print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role EURM SB in user {userName} erroneous. Removed.")
+
+                    if roleEurn in user.roles:
+                        await user.remove_roles(roleEurn)
+                        print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role EURN in user {userName} erroneous. Removed.")
+                    if roleEurnSB in user.roles:
+                        await user.remove_roles(roleEurnSB)
+                        print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role EURN SB in user {userName} erroneous. Removed.")
+                    
+                    if roleEurs in user.roles:
+                        await user.remove_roles(roleEurs)
+                        print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role EURS in user {userName} erroneous. Removed.")
+                    if roleEursSB in user.roles:
+                        await user.remove_roles(roleEursSB)
+                        print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role EURS SB in user {userName} erroneous. Removed.")
+                    
+                    if roleEurw in user.roles:
+                        await user.remove_roles(roleEurw)
+                        print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role EURW in user {userName} erroneous. Removed.")
+                    if roleEurwSB in user.roles:
+                        await user.remove_roles(roleEurwSB)
+                        print(f"{bcolors.WARNING}UPDATE:{bcolors.ENDC} role EURW SB in user {userName} erroneous. Removed.")
+
 
 
                         
